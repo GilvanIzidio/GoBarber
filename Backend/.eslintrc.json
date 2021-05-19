@@ -20,8 +20,9 @@
 	"prettier"
 	],
 	"rules": {
-	"prettier/prettier": "error",
+	"prettier/prettier": "warn",
 	"class-methods-use-this":"off",
+	"camelcase":"off",
 	"indent": [2, "tab"],
 	"no-tabs": 0,
 	"import/no-extraneous-dependencies": [
