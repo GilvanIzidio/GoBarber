@@ -2,21 +2,13 @@ import React from 'react';
 import { Image, KeyboardAvoidingView, Platform, View, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
-import {
-  Container,
-  Title,
-  ForgotPassword,
-  ForgotPasswordText,
-  CreateAccountButton,
-  CreateAccountButtonText,
-} from './styles';
+import { Container, Title, BackToLogin, BackToLoginText } from './styles';
 import logoImg from '../../assets/logo.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-const SignIn: React.FC = () => {
+const SignUp: React.FC = () => {
   const navigation = useNavigation();
-
   return (
     <>
       <KeyboardAvoidingView
@@ -28,34 +20,28 @@ const SignIn: React.FC = () => {
           <Container>
             <Image source={logoImg} />
             <View>
-              <Title>Faça seu login</Title>
+              <Title>Crie sua conta</Title>
             </View>
 
+            <Input name="name" icon="user" placeholder="Nome" />
             <Input name="email" icon="mail" placeholder="Email" />
             <Input name="password" icon="lock" placeholder="Senha" secureTextEntry />
 
-            <Button>Entrar</Button>
-            <ForgotPassword
-              onPress={() => {
-                console.log('teste');
-              }}
-            >
-              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
-            </ForgotPassword>
+            <Button>Cadastrar</Button>
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
 
-      <CreateAccountButton
+      <BackToLogin
         onPress={() => {
-          navigation.navigate('SignUp');
+          navigation.navigate('SignIn');
         }}
       >
-        <Icon name="log-in" size={20} color="#ff9000" />
-        <CreateAccountButtonText>Criar uma nova conta</CreateAccountButtonText>
-      </CreateAccountButton>
+        <Icon name="arrow-left" size={20} color="#fff" />
+        <BackToLoginText>Voltar para o Login</BackToLoginText>
+      </BackToLogin>
     </>
   );
 };
 
-export default SignIn;
+export default SignUp;
