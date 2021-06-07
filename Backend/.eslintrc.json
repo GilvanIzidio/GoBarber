@@ -24,6 +24,7 @@
 	"class-methods-use-this":"off",
 	"no-console":"off",
 	"camelcase":"off",
+	"no-useless-constructor":"off",
 	"indent": [2, "tab"],
 	"no-tabs": 0,
 	"@typescript-eslint/no-unused-vars":["error",{
