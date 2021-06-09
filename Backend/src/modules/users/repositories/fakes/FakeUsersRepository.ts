@@ -1,4 +1,4 @@
-import IUserRepository from '@modules/users/repositories/IUserRepository';
+import IUserRepository from '@modules/users/repositories/IUsersRepository';
 import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
 import { v4 as uuid } from 'uuid';
 
