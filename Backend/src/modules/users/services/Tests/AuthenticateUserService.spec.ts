@@ -1,10 +1,10 @@
 // import AppError from '@shared/errors/AppError';
 import AppError from '@shared/errors/AppError';
-import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
-import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
-import AuthenticateUserService from './AuthenticateUserService';
+import FakeUsersRepository from '../../repositories/fakes/FakeUsersRepository';
+import FakeHashProvider from '../../providers/HashProvider/fakes/FakeHashProvider';
+import AuthenticateUserService from '../AuthenticateUserService';
 
-import CreateUserService from './CreateUserService';
+import CreateUserService from '../CreateUserService';
 
 describe('AuthenticateUser', () => {
 	it('should be able to authenticate', async () => {
