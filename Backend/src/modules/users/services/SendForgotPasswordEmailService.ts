@@ -4,7 +4,7 @@ import AppError from '@shared/errors/AppError';
 import IMailProvider from '@shared/container/providers/MailProvider/models/IMailProvider';
 import IUsersRepository from '../repositories/IUsersRepository';
 
-import IUserTokensRepository from '../repositories/IUserTokensRepository'
+import IUserTokensRepository from '../repositories/IUserTokensRepository';
 
 interface IRequest {
 	email: string;
@@ -30,7 +30,7 @@ class SendForgotPasswordEmailService {
 			throw new AppError('user does not exists');
 		}
 
-		await this.userTokensRepository.generate(user.id)
+		await this.userTokensRepository.generate(user.id);
 
 		this.mailProvider.sendMail(email, 'recovery password');
 	}
