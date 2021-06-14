@@ -24,18 +24,18 @@ describe('CreateUser', () => {
 	});
 
 	it('shoud not be able to create two emails equals', async () => {
-		const emailEqual = 'fulano@gmail.com';
+		//  const emailEqual = 'fulano@gmail.com';
 
 		await createUser.execute({
-			name: 'Gilvan',
-			email: emailEqual,
-			password: '123456',
+			name: 'Mateus',
+			email: 'fulano@gmail.com',
+			password: '965874',
 		});
 
 		await expect(
 			createUser.execute({
 				name: 'Gilvan',
-				email: emailEqual,
+				email: 'fulano@gmail.com',
 				password: '123456',
 			}),
 		).rejects.toBeInstanceOf(AppError);

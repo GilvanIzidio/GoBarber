@@ -106,4 +106,22 @@ describe('UpdateProfile', () => {
 			}),
 		).rejects.toBeInstanceOf(AppError);
 	});
+
+	it('should not be able update profile when non-existing-user', async () => {
+		await fakeUserRepository.create({
+			name: 'Gilvan',
+			email: 'gilvan@gmail.com',
+			password: '123123',
+		});
+
+		await expect(
+			updateProfile.execute({
+				user_id: 'non-existing-id',
+				name: 'Gilvan',
+				email: 'g@example.com',
+				password: '1231231',
+				old_password: '123123',
+			}),
+		).rejects.toBeInstanceOf(AppError);
+	});
 });
