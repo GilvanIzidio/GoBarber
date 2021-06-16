@@ -5,7 +5,6 @@ import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
 
 interface IRequest {
 	provider_id: string;
-	user_id: string;
 	month: number;
 	year: number;
 }
