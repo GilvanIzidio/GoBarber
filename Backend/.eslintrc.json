@@ -1,56 +1,62 @@
 {
-	"env": {
-			"es2021": true,
-			"node": true,
-			"jest":true
-	},
-	"extends": [
-			"airbnb-base",
-	// "prettier/@typescript-eslint",
-	"plugin:@typescript-eslint/recommended",
-	"plugin:prettier/recommended"
-
-	],
-	"parser": "@typescript-eslint/parser",
-	"parserOptions": {
-			"ecmaVersion": 12,
-			"sourceType": "module"
-	},
-	"plugins": [
-			"@typescript-eslint",
-	"prettier"
-	],
-	"rules": {
-	"prettier/prettier": "warn",
-	"class-methods-use-this":"off",
-	"no-console":"off",
-	"camelcase":"off",
-	"no-useless-constructor":"off",
-	"indent": [2, "space"],
-	"no-tabs": 0,
-	"import/no-unresolved":"off",
-	"@typescript-eslint/no-unused-vars":["error",{
-		"argsIgnorePattern":"_"
-	}],
-	"import/no-extraneous-dependencies": [
-		"error",
-		{
-			"devDependencies": true
-		}
-	],
-	"import/extensions": [
-		"error",
-		"ignorePackages",
-		{
-			"ts": "never"
-		}
-	]
-	},
-"settings": {
-	"import/resolver": {
-		"typescript": {
-
-		}
-	}
-}
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "prettier"
+  ],
+  "rules": {
+    "camelcase": "off",
+    "prettier/prettier": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/no-duplicates": "off",
+    "react/jsx-filename-extension": [1, {
+      "extensions": [".tsx"]
+    }],
+    "import/prefer-default-export": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-use-before-define": "warn",
+    "@typescript-eslint/ban-types": ["error",
+      {
+          "types": {
+              "{}": false,
+              "object": false
+          },
+          "extendDefaults": true
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
 }
