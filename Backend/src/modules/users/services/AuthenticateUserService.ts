@@ -1,4 +1,4 @@
-import { sign } from 'jsonwebtoken';
+import { sign } from "jsonwebtoken"
 import { inject, injectable } from 'tsyringe';
 
 import authConfig from '@config/auth';
